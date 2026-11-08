@@ -25,7 +25,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;background:var(--deep);color:#fff;letter-spacing:-.02em;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{word-break:keep-all;font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;background:var(--deep);color:#fff;letter-spacing:-.02em;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
 /* 맨 위 진행 막대 */
 #prog{position:fixed;left:0;top:0;height:4px;width:100%;background:linear-gradient(90deg,var(--yel),#FF9F43);transform-origin:0 50%;transform:scaleX(0);z-index:50;box-shadow:0 0 12px rgba(255,225,77,.7)}
@@ -95,11 +95,6 @@ body{font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;backg
 .shot figcaption{background:var(--deep);color:var(--mute);font-size:12.5px;padding:8px 12px}
 
 /* 도구 띠 */
-.tools{background:#070C2A;padding:26px 0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.tools .k{text-align:center;font-size:13px;font-weight:800;color:var(--mute);margin-bottom:14px}
-.track{display:flex;gap:12px;width:max-content;animation:marq 38s linear infinite}
-.tools:hover .track{animation-play-state:paused}
-.track span{flex:none;white-space:nowrap;font-size:15px;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:999px;padding:9px 18px}
 @keyframes marq{to{transform:translateX(-50%)}}
 
 /* 첫 90일 */
@@ -203,6 +198,8 @@ body{font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;backg
 .mail a{color:#fff;font-weight:700}
 .rocket{position:absolute;width:60px;height:60px;left:-80px;bottom:30%;animation:fly 9s linear infinite}
 @keyframes fly{0%{transform:translate(0,0) rotate(20deg)}100%{transform:translate(calc(100vw + 160px),-260px) rotate(20deg)}}
+.d90 .pf{margin-top:12px;font-weight:800;color:var(--blue2);font-size:16px}
+footer .tl{display:block;margin-top:6px;font-size:12px;opacity:.7}
 footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;background:#070C2A}
 
 @media (max-width:860px){
@@ -226,7 +223,7 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
   .btns a{padding:14px 20px;font-size:16px}
   .fab{right:12px;bottom:12px;padding:12px 18px}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 span,.hero p.sub,.pills span,.pills b,.card li,.fr,.win{opacity:1;transform:none}.track{flex-wrap:wrap;width:auto;justify-content:center;padding:0 16px}.track .dup{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 span,.hero p.sub,.pills span,.pills b,.card li,.fr,.win{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -298,7 +295,7 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
     <div class="hello" id="hello" hidden></div>
     <div class="eyebrow">그로스 퍼포먼스 마케터 · 고동현</div>
     <h1><span>광고를 읽는 감각에,</span><br><span style="animation-delay:.35s"><em>AI라는 엔진</em>을 달았습니다.</span></h1>
-    <p class="sub">고객의 마음이 끓어오르는 지점을 찾습니다.<br>막힌 퍼널은 자동화로 뚫습니다.</p>
+    <p class="sub">석 달 만에 병원 매출 3.5배.<br>검색부터 수술까지, 고객이 지나는 문을 하나씩 열었습니다.</p>
     <div class="pills" id="pills"></div>
   </div>
   <div class="scrollhint"><i></i>내려서 여정 보기</div>
@@ -307,12 +304,12 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
 <!-- 숫자 띠 -->
 <section class="band">
   <h2>퍼널 전 단계를 <em>직접 끌어올렸습니다</em></h2>
-  <p class="bs">병원 전산과 광고 관리자 기준 숫자입니다.</p>
+  <p class="bs">2026년 8월 → 10월 · 병원 전산과 광고 관리자 기준</p>
   <div class="nums">
-    <div class="num"><div class="s">유입</div><div class="n" data-to="4.8" data-dec="1">0<small>배</small></div><div class="t">메타 리드</div><div class="d">월 45 → 217건</div><div class="w"><b>제가 한 일</b>고객의 말로 소재·양식 재설계</div></div>
-    <div class="num"><div class="s">상담</div><div class="n" data-to="3.8" data-dec="1">0<small>배</small></div><div class="t">통화 연결</div><div class="d">13 → 50%</div><div class="w"><b>제가 한 일</b>리드가 들어오면 바로 첫 통화 배정</div></div>
-    <div class="num"><div class="s">전환</div><div class="n" data-to="2.5" data-dec="1">0<small>배</small></div><div class="t">최종 전환</div><div class="d">월 19 → 48건</div><div class="w"><b>제가 한 일</b>단계별 이탈을 세고 가장 새는 곳부터</div></div>
-    <div class="num top"><div class="s">결과</div><div class="n" data-to="3.5" data-dec="1">0<small>배</small></div><div class="t">병원 매출</div><div class="d">팀장 합류 뒤</div><div class="w"><b>제가 한 일</b>유입부터 수술까지 퍼널 전체 담당</div></div>
+    <div class="num"><div class="s">유입</div><div class="n" data-to="4.8" data-dec="1">0<small>배</small></div><div class="t">메타 월 신청</div><div class="d">월 45 → 217건</div><div class="w"><b>제가 한 일</b>고객의 말로 소재·양식 재설계</div></div>
+    <div class="num"><div class="s">상담</div><div class="n" data-to="3.8" data-dec="1">0<small>배</small></div><div class="t">통화 연결</div><div class="d">13 → 50%</div><div class="w"><b>제가 한 일</b>신청이 들어오면 바로 첫 통화 배정</div></div>
+    <div class="num"><div class="s">전환</div><div class="n" data-to="2.5" data-dec="1">0<small>배</small></div><div class="t">월 수술</div><div class="d">월 19 → 48건</div><div class="w"><b>제가 한 일</b>단계마다 매일 세고 가장 늦는 곳부터</div></div>
+    <div class="num top"><div class="s">결과</div><div class="n" data-to="3.5" data-dec="1">0<small>배</small></div><div class="t">병원 매출</div><div class="d">같은 병원 월 매출 비교</div><div class="w"><b>제가 한 일</b>유입부터 수술까지 퍼널 전체 담당</div></div>
   </div>
 </section>
 
@@ -321,8 +318,8 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
   <div class="stars" id="s2"></div>
   <div class="jhead">
     <div class="k">2024 → 2026</div>
-    <h2>검색 광고 운영자에서<br>퍼널 전체를 책임지는 마케터로</h2>
-    <p>내릴 때마다 우주인이 다음 궤도로 넘어갑니다.</p>
+    <h2>고객이 지나는 문을<br>하나씩 열었습니다</h2>
+    <p>막힌 곳 → 제 결정 → 바뀐 숫자 순서로 읽어 주세요.</p>
   </div>
   <div class="jwrap">
     <div class="stage" id="stage">
@@ -338,20 +335,14 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
   </div>
 </section>
 
-<!-- 도구 띠 -->
-<section class="tools" aria-label="매일 쓰는 도구">
-  <div class="k">매일 쓰는 도구</div>
-  <div class="track" id="track"></div>
-</section>
-
-<!-- 첫 90일 -->
+<!-- 해내는 순서 -->
 <section class="d90">
-  <h2>입사하면 <em>첫 90일</em>은 이렇게 씁니다</h2>
-  <p class="bs">새는 곳을 찾고, 고치고, 굳힙니다.</p>
+  <h2>어디서든 <em>같은 순서</em>로 숫자를 바꿉니다</h2>
+  <p class="bs">찾고, 고치고, 굳힙니다. 단계마다 증거가 있습니다.</p>
   <div class="dd">
-    <div><b>30일</b><h3>퍼널 지도</h3><p>광고 관리자와 전산 숫자를 이어 퍼널 지도를 만듭니다.</p></div>
-    <div><b>60일</b><h3>한 곳 고치기</h3><p>가장 새는 한 곳을 골라 실험으로 고칩니다.</p></div>
-    <div><b>90일</b><h3>자동으로 굳히기</h3><p>고친 답을 자동 보고와 알림으로 굳힙니다.</p></div>
+    <div><b>찾기</b><h3>빠지는 단계를 셉니다</h3><p>신청에서 수술까지 단계마다 빠지는 수를 매일 셌습니다.</p><p class="pf">통화 연결 13 → 50%</p></div>
+    <div><b>고치기</b><h3>가장 새는 곳부터</h3><p>고객의 말로 소재와 신청 양식을 다시 짰습니다.</p><p class="pf">신청 1건 단가 7.1만 → 4.9만 원</p></div>
+    <div><b>굳히기</b><h3>자동화로 지킵니다</h3><p>매일 할 판단은 AI 에이전트에 맡겼습니다.</p><p class="pf">입찰 조정 주 1회 → 매일</p></div>
   </div>
 </section>
 
@@ -359,12 +350,12 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
 <section class="final" id="contact">
   <div class="stars" id="s3"></div>
   <svg class="rocket" viewBox="0 0 60 60"><path d="M30 4c10 8 14 20 12 34H18C16 24 20 12 30 4z" fill="#fff" stroke="#1B2252" stroke-width="3"/><circle cx="30" cy="24" r="6" fill="#3557F5" stroke="#1B2252" stroke-width="3"/><path d="M18 38l-8 10 10-2zM42 38l8 10-10-2z" fill="#FFE14D" stroke="#1B2252" stroke-width="3"/><path d="M24 40q6 16 12 0z" fill="#FF8A3D"/></svg>
-  <h2>다음 궤도를<br><em>함께 날 팀</em>을 찾습니다.</h2>
-  <p>어디서 새는지 숫자로 찾고,<br>고친 답은 자동화로 굳힙니다.</p>
+  <h2>다섯 번째 문은<br><em>귀사에서</em> 열겠습니다.</h2>
+  <p>어디서 막히는지 숫자로 찾고,<br>고친 답은 자동화로 굳힙니다.</p>
   <div class="btns"><a class="p" href="portfolio.pdf" target="_blank" rel="noopener" data-ev="pdf">포트폴리오 보기</a><a class="s" href="tel:01087817805" data-ev="call">전화하기</a><a class="s" href="sms:01087817805" data-ev="sms">문자 보내기</a><a class="s" id="mailBtn" href="mailto:dbtkdqk@naver.com" data-ev="mail">메일 보내기</a></div>
   <div class="mail">전화 · <a href="tel:01087817805" data-ev="call">010-8781-7805</a> &nbsp;·&nbsp; 메일 · <a href="mailto:dbtkdqk@naver.com" data-ev="mail">dbtkdqk@naver.com</a></div>
 </section>
-<footer>고동현 · 그로스 퍼포먼스 마케터</footer>
+<footer>고동현 · 그로스 퍼포먼스 마케터<span class="tl">네이버 검색광고 · 메타 광고 · 구글 시트 · Claude Code · Codex · Notion</span></footer>
 <a class="fab" id="fab" href="#contact" data-ev="fab">연락하기</a>
 
 <script>
@@ -403,35 +394,35 @@ for(let k=0;k<12;k++)beams.insertAdjacentHTML('beforeend','<i style="transform:r
 const CH=[
  {y:'2024 – 2025',role:'검색 광고 운영자',item:1,ps:.86,pr:0,
   pl:'radial-gradient(circle at 30% 28%,#7BF0A8,#03C75A 55%,#016B33)',glow:'rgba(3,199,90,.45)',
-  t:'네이버 로직 변화를<br>피부로 느꼈습니다',
-  p:'카페와 블로그는 네이버 흐름을 읽는 도구였습니다. 노출이 흔들리는 날을 먼저 알아챘고, 그 감각으로 파워링크 입찰을 정했습니다.',
-  li:[['파워링크 키워드','1,421개'],['경쟁 광고주 추적','3,526곳 · 매시간'],['쌓은 순위 기록','29.3만 줄'],['블로그 검색 1위','6→12개']],
-  next:'검색 수요는 잡았습니다. 다음은 병원을 비교하는 고객입니다.'},
- {y:'2025',role:'리드 그로스 담당',item:2,ps:1,pr:50,
+  t:'첫 번째 문 · 검색<br>검색하는 고객을 먼저 잡았습니다',
+  p:'네이버 검색 결과는 자주 바뀌고, 노출도 따라 흔들립니다. 저는 검색량과 순위로 쓸 키워드를 골랐습니다. 카페와 블로그도 같은 기준으로 키웠습니다.',
+  li:[['블로그 검색 1위 글','6→12개'],['네이버 카페 회원','10만→12.5만 명']],
+  next:'검색 고객을 잡았습니다. 다음 문은 병원을 비교하는 자리입니다.'},
+ {y:'2025 – 2026',role:'리드 그로스 담당',item:2,ps:1,pr:50,
   pl:'radial-gradient(circle at 30% 28%,#FFB3CF,#FF5C93 55%,#A3164F)',glow:'rgba(255,92,147,.45)',
-  t:'고객이 비교하는 곳마다<br>리드 창구를 열었습니다',
-  p:'고객은 강남언니·바비톡·여신티켓에서 병원을 비교합니다. 그 자리의 상세 페이지를 기획부터 올리기까지 맡았습니다. 메타 소재는 고객이 실제로 쓴 말로 만들었습니다.',
-  li:[['시술 플랫폼 상세 페이지','3곳 총괄'],['릴스 최고 조회','215.4만 회'],['쇼츠 최고 조회','30만 회']],
-  auto:'플랫폼 리드 <em>메신저 알림</em> · 메타 양식 <em>자동 변환</em> · <em>전환 추적</em> 직접 연결',
-  next:'리드는 늘었습니다. 그런데 매출까지 오지 않았습니다.'},
+  t:'두 번째 문 · 비교<br>비교하는 고객을 신청까지 데려왔습니다',
+  p:'고객은 여러 병원 광고를 나란히 놓고 비교합니다. 저는 고객이 실제로 쓴 말로 소재와 신청 양식을 다시 짰습니다.',
+  li:[['메타 월 신청 · 2026년 8→10월','45→217건'],['신청 1건 단가 · 같은 기간','7.1만→4.9만 원'],['릴스 최고 조회','215.4만 회'],['쇼츠 최고 조회','30만 회']],
+  auto:'플랫폼 신청 <em>메신저 알림</em> · 메타 양식 <em>자동 변환</em> · <em>전환 추적</em> 직접 연결',
+  next:'신청이 4.8배로 늘자, 다음 문은 첫 통화였습니다.'},
  {y:'2026',role:'퍼포먼스 마케팅 팀장',item:4,ps:1.1,pr:110,
   pl:'radial-gradient(circle at 30% 28%,#B9C6FF,#3557F5 55%,#1A2A94)',glow:'rgba(79,109,255,.55)',
-  t:'노출부터 매출까지,<br>새는 단계를 막았습니다',
-  p:'리드부터 수술까지 단계마다 빠지는 수를 셌습니다. 가장 많이 새는 곳부터 고쳤습니다.',
-  fun:[['유입','메타 월 리드','4.8배',100,'월 45→217건 · 고객의 말로 소재와 양식을 다시 설계'],
-       ['상담','통화 연결률','3.8배',80,'13→50% · 리드가 들어오면 바로 첫 통화 배정'],
-       ['방문','내원율','58→68%',62,'막힌 이유별 문자 · 실장 할 일 시트'],
-       ['전환','월 수술 전환','2.5배',52,'월 19→48건']],
+  t:'세 번째 문 · 상담<br>신청부터 수술까지<br>모든 단계를 올렸습니다',
+  p:'신청이 몰리면 첫 통화가 늦어집니다. 저는 단계마다 빠지는 수를 매일 세고, 가장 늦는 곳부터 고쳤습니다. 숫자는 모두 2026년 8월 → 10월입니다.',
+  fun:[['유입','메타 월 신청','4.8배',100,'월 45→217건 · 고객의 말로 소재와 양식을 다시 설계'],
+       ['상담','통화 연결률','3.8배',80,'13→50% · 신청이 들어오면 바로 첫 통화 배정'],
+       ['방문','예약 뒤 내원율','58→68%',62,'병원 전산 예약을 매일 가져와 전날 한 번 더 확인'],
+       ['전환','월 수술','2.5배',52,'월 19→48건 · 수술까지 간 광고에 예산 집중']],
   win:['병원 매출','3.5배'],
-  next:'이 속도를 사람 손 없이 유지할 차례입니다.'},
- {y:'2026',role:'AI 에이전트 팀 지휘',item:5,ps:1.2,pr:170,
+  next:'이 속도를 사람 손 없이 지킬 차례였습니다.'},
+ {y:'2026',role:'AI 에이전트 팀 설계',item:5,ps:1.2,pr:170,
   pl:'radial-gradient(circle at 30% 28%,#E0C2FF,#8B5CF6 55%,#4A1FA3)',glow:'rgba(139,92,246,.55)',
-  t:'마케팅팀 하나 분량을<br>AI 에이전트로 돌립니다',
-  p:'키워드·경쟁사·카피·시안·심의·보고를 맡는 에이전트를 직접 설계했습니다. 반복은 AI가, 판단은 제가 합니다.',
-  li:[['직무별 AI 에이전트','6개 · 24시간'],['매일 판정하는 키워드','140개'],['입찰 조정','주 1회→매일'],['소재 시안 자동 판정','514→12건']],
-  auto:'업무보고 <em>매일 18:02 자동</em> · 쓰면서 고친 앱 배포 <em>142회</em>'}
+  t:'네 번째 문 · 반복<br>매일 할 판단을 AI에 맡겼습니다',
+  p:'광고 시장은 매일 바뀝니다. 키워드·경쟁사·카피·시안·심의·보고를 맡는 AI 에이전트를 직접 만들었습니다. 반복은 AI가, 판단은 제가 합니다.',
+  li:[['네이버 입찰 조정','주 1회→매일'],['네이버 결과당 비용 · 2026년 8→10월','13.8만→2.9만 원'],['업무 보고','매일 18시 자동']],
+  next:'다섯 번째 문은 귀사에 있습니다.'}
 ];
-const SH=[['키워드별 검색량·1위 입찰가',540],['매체별 광고 보관함',564],['퍼널 단계별 이탈',422],['AI가 고른 오늘 할 일',461]];
+const SH=[['키워드별 검색량·1위 입찰가',540],['매체별 광고 보관함',564],null,['AI가 고른 오늘 할 일',461]];
 const chEl=document.getElementById('chapters'),orbit=document.getElementById('orbit');
 CH.forEach((c,i)=>{
   let body='',k=0;
@@ -495,11 +486,6 @@ function count(el){const to=+el.dataset.to,dec=+(el.dataset.dec||0);const t0=per
 const io2=new IntersectionObserver(es=>{es.forEach((e,j)=>{if(!e.isIntersecting)return;const n=e.target;setTimeout(()=>n.classList.add('in'),j*140);
   n.querySelectorAll('[data-to]').forEach(count);io2.unobserve(n)})},{threshold:.4});
 document.querySelectorAll('.num').forEach(n=>io2.observe(n));
-// 도구 띠
-const TOOLS=['네이버 검색광고','메타 광고 관리자','구글 시트 · Apps Script','Claude Code','Codex','Notion','Higgsfield','Seedance','강남언니 · 바비톡 · 여신티켓','네이버 카페 · 블로그 · 플레이스'];
-const tl=TOOLS.map(t=>'<span>'+t+'</span>').join('');
-document.getElementById('track').innerHTML=tl+tl.replace(/<span>/g,'<span class="dup" aria-hidden="true">');
-
 // 회사별 꼬리표: 주소 끝 ?c=회사명
 const CO=(new URLSearchParams(location.search).get('c')||'').trim().slice(0,30);
 const MAILSUB=(CO?'['+CO+'] ':'')+'고동현님께 연락드립니다';
