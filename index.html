@@ -7,6 +7,15 @@
 <meta name="description" content="그로스 퍼포먼스 마케터 고동현. 검색 광고에서 퍼널 전체, AI 에이전트 팀까지 2024년부터 지금까지의 기록.">
 <meta property="og:title" content="고동현 · 그로스 퍼포먼스 마케터">
 <meta property="og:description" content="광고를 읽는 감각에, AI라는 엔진을 달았습니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://donghyun10291.github.io/portfolio/">
+<meta property="og:image" content="https://donghyun10291.github.io/portfolio/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A1238">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
 <style>
 :root{
@@ -76,6 +85,43 @@ body{font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;backg
 .num .d{font-size:13px;color:#7A84AC;margin-top:3px}
 .num.top{background:var(--blue);border-color:var(--blue);color:#fff}
 .num.top .n{color:var(--yel)}.num.top .s,.num.top .d{color:#D5DDFF}
+.num .w{margin-top:12px;padding-top:11px;border-top:1px dashed #C9D1F5;font-size:13.5px;font-weight:700;line-height:1.45;color:var(--ink)}
+.num .w b{display:block;font-size:11.5px;font-weight:800;color:var(--blue);margin-bottom:2px}
+.num.top .w{border-color:rgba(255,255,255,.35);color:#fff}.num.top .w b{color:var(--yel)}
+
+/* 실제 화면 */
+.shot{margin-top:18px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{background:var(--deep);color:var(--mute);font-size:12.5px;padding:8px 12px}
+
+/* 도구 띠 */
+.tools{background:#070C2A;padding:26px 0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tools .k{text-align:center;font-size:13px;font-weight:800;color:var(--mute);margin-bottom:14px}
+.track{display:flex;gap:12px;width:max-content;animation:marq 38s linear infinite}
+.tools:hover .track{animation-play-state:paused}
+.track span{flex:none;white-space:nowrap;font-size:15px;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:999px;padding:9px 18px}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* 첫 90일 */
+.d90{background:#fff;color:var(--ink);padding:70px 16px}
+.d90 h2{text-align:center;font-size:clamp(24px,3.4vw,34px);font-weight:800;margin-bottom:8px}
+.d90 h2 em{font-style:normal;color:var(--blue)}
+.d90 .bs{text-align:center;color:#5B6488;font-size:16px;margin-bottom:30px}
+.dd{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.dd div{border:2px solid #DCE2FF;border-radius:22px;padding:24px 22px}
+.dd b{display:inline-block;font-size:13px;font-weight:800;color:#fff;background:var(--blue);border-radius:999px;padding:4px 12px}
+.dd h3{font-size:20px;font-weight:800;margin:12px 0 6px}
+.dd p{font-size:15px;color:#5B6488;line-height:1.55}
+.dd div:last-child{background:var(--blue);border-color:var(--blue);color:#fff}
+.dd div:last-child b{background:var(--yel);color:var(--ink)}
+.dd div:last-child p{color:#D5DDFF}
+
+/* 회사별 인사 */
+.hello{display:inline-block;font-size:14px;font-weight:800;color:var(--blue2);background:#fff;border-radius:999px;padding:7px 16px;margin-bottom:14px}
+
+/* 떠 있는 연락 버튼 */
+.fab{position:fixed;right:18px;bottom:18px;z-index:40;text-decoration:none;font-weight:800;font-size:15px;color:var(--ink);background:var(--yel);border-radius:999px;padding:13px 20px;box-shadow:0 10px 30px -6px rgba(0,0,0,.45);opacity:0;transform:translateY(20px);pointer-events:none;transition:.3s}
+.fab.on{opacity:1;transform:none;pointer-events:auto}
 
 /* 여정 */
 .journey{position:relative;background:linear-gradient(180deg,var(--deep2),var(--deep) 30%,#070C2A);overflow:clip}
@@ -175,8 +221,12 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
   .card{padding:24px 20px;transform:translateX(50px) rotate(1.5deg) scale(.96)}
   .card .no{font-size:120px;top:-20px}
   .pills span{font-size:13.5px}
+  .dd{grid-template-columns:1fr;gap:12px}
+  .num .w{font-size:12.5px}
+  .btns a{padding:14px 20px;font-size:16px}
+  .fab{right:12px;bottom:12px;padding:12px 18px}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 span,.hero p.sub,.pills span,.pills b,.card li,.fr,.win{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 span,.hero p.sub,.pills span,.pills b,.card li,.fr,.win{opacity:1;transform:none}.track{flex-wrap:wrap;width:auto;justify-content:center;padding:0 16px}.track .dup{display:none}}
 </style>
 </head>
 <body>
@@ -216,8 +266,8 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
       <circle cx="160" cy="112" r="100" fill="url(#suit)" stroke="#1B2252" stroke-width="6"/>
       <circle cx="160" cy="118" r="80" fill="#C9D2F0"/>
       <circle cx="160" cy="118" r="70" fill="#0E1B4D"/>
-      <image href="face.png?v=4" x="90" y="48" width="140" height="140" clip-path="url(#visor)" preserveAspectRatio="xMidYMid slice"/>
-      <g clip-path="url(#visor)"><path d="M86 40 H234 V76 Q160 82 86 76 Z" fill="url(#shade)"/><path d="M86 76 Q160 82 234 76" fill="none" stroke="#7F95FF" stroke-width="2.5" opacity=".8"/></g>
+      <image href="face.png?v=5" x="90" y="48" width="140" height="140" clip-path="url(#visor)" preserveAspectRatio="xMidYMid slice"/>
+      <g clip-path="url(#visor)"><path d="M86 40 H234 V70 Q160 76 86 70 Z" fill="url(#shade)"/><path d="M86 70 Q160 76 234 70" fill="none" stroke="#7F95FF" stroke-width="2.5" opacity=".8"/></g>
       <circle cx="160" cy="118" r="70" fill="none" stroke="#1B2252" stroke-width="6"/>
       <path d="M108 86 A62 62 0 0 1 150 58" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".7"/>
       <circle cx="104" cy="104" r="5" fill="#fff" opacity=".7"/>
@@ -245,6 +295,7 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
   <div class="shoot" style="top:40%;right:-140px;animation-delay:3.5s"></div>
   <div id="heroAstro" title="눌러 보세요"></div>
   <div class="hin" id="hin">
+    <div class="hello" id="hello" hidden></div>
     <div class="eyebrow">그로스 퍼포먼스 마케터 · 고동현</div>
     <h1><span>광고를 읽는 감각에,</span><br><span style="animation-delay:.35s"><em>AI라는 엔진</em>을 달았습니다.</span></h1>
     <p class="sub">고객의 마음이 끓어오르는 지점을 찾습니다.<br>막힌 퍼널은 자동화로 뚫습니다.</p>
@@ -258,10 +309,10 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
   <h2>퍼널 전 단계를 <em>직접 끌어올렸습니다</em></h2>
   <p class="bs">병원 전산과 광고 관리자 기준 숫자입니다.</p>
   <div class="nums">
-    <div class="num"><div class="s">유입</div><div class="n" data-to="4.8" data-dec="1">0<small>배</small></div><div class="t">메타 리드</div><div class="d">월 45 → 217건</div></div>
-    <div class="num"><div class="s">상담</div><div class="n" data-to="3.8" data-dec="1">0<small>배</small></div><div class="t">통화 연결</div><div class="d">13 → 50%</div></div>
-    <div class="num"><div class="s">전환</div><div class="n" data-to="2.5" data-dec="1">0<small>배</small></div><div class="t">최종 전환</div><div class="d">월 19 → 48건</div></div>
-    <div class="num top"><div class="s">결과</div><div class="n" data-to="3.5" data-dec="1">0<small>배</small></div><div class="t">병원 매출</div><div class="d">팀장 합류 뒤</div></div>
+    <div class="num"><div class="s">유입</div><div class="n" data-to="4.8" data-dec="1">0<small>배</small></div><div class="t">메타 리드</div><div class="d">월 45 → 217건</div><div class="w"><b>제가 한 일</b>고객의 말로 소재·양식 재설계</div></div>
+    <div class="num"><div class="s">상담</div><div class="n" data-to="3.8" data-dec="1">0<small>배</small></div><div class="t">통화 연결</div><div class="d">13 → 50%</div><div class="w"><b>제가 한 일</b>리드가 들어오면 바로 첫 통화 배정</div></div>
+    <div class="num"><div class="s">전환</div><div class="n" data-to="2.5" data-dec="1">0<small>배</small></div><div class="t">최종 전환</div><div class="d">월 19 → 48건</div><div class="w"><b>제가 한 일</b>단계별 이탈을 세고 가장 새는 곳부터</div></div>
+    <div class="num top"><div class="s">결과</div><div class="n" data-to="3.5" data-dec="1">0<small>배</small></div><div class="t">병원 매출</div><div class="d">팀장 합류 뒤</div><div class="w"><b>제가 한 일</b>유입부터 수술까지 퍼널 전체 담당</div></div>
   </div>
 </section>
 
@@ -287,16 +338,34 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
   </div>
 </section>
 
+<!-- 도구 띠 -->
+<section class="tools" aria-label="매일 쓰는 도구">
+  <div class="k">매일 쓰는 도구</div>
+  <div class="track" id="track"></div>
+</section>
+
+<!-- 첫 90일 -->
+<section class="d90">
+  <h2>입사하면 <em>첫 90일</em>은 이렇게 씁니다</h2>
+  <p class="bs">새는 곳을 찾고, 고치고, 굳힙니다.</p>
+  <div class="dd">
+    <div><b>30일</b><h3>퍼널 지도</h3><p>광고 관리자와 전산 숫자를 이어 퍼널 지도를 만듭니다.</p></div>
+    <div><b>60일</b><h3>한 곳 고치기</h3><p>가장 새는 한 곳을 골라 실험으로 고칩니다.</p></div>
+    <div><b>90일</b><h3>자동으로 굳히기</h3><p>고친 답을 자동 보고와 알림으로 굳힙니다.</p></div>
+  </div>
+</section>
+
 <!-- 마지막 -->
-<section class="final">
+<section class="final" id="contact">
   <div class="stars" id="s3"></div>
   <svg class="rocket" viewBox="0 0 60 60"><path d="M30 4c10 8 14 20 12 34H18C16 24 20 12 30 4z" fill="#fff" stroke="#1B2252" stroke-width="3"/><circle cx="30" cy="24" r="6" fill="#3557F5" stroke="#1B2252" stroke-width="3"/><path d="M18 38l-8 10 10-2zM42 38l8 10-10-2z" fill="#FFE14D" stroke="#1B2252" stroke-width="3"/><path d="M24 40q6 16 12 0z" fill="#FF8A3D"/></svg>
   <h2>다음 궤도를<br><em>함께 날 팀</em>을 찾습니다.</h2>
   <p>어디서 새는지 숫자로 찾고,<br>고친 답은 자동화로 굳힙니다.</p>
-  <div class="btns"><a class="p" href="portfolio.pdf" target="_blank" rel="noopener">포트폴리오 보기</a><a class="s" href="mailto:dbtkdqk@naver.com?subject=%EA%B3%A0%EB%8F%99%ED%98%84%EB%8B%98%EA%BB%98%20%EC%97%B0%EB%9D%BD%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4">연락하기</a></div>
-  <div class="mail">메일 · <a href="mailto:dbtkdqk@naver.com">dbtkdqk@naver.com</a></div>
+  <div class="btns"><a class="p" href="portfolio.pdf" target="_blank" rel="noopener" data-ev="pdf">포트폴리오 보기</a><a class="s" href="tel:01087817805" data-ev="call">전화하기</a><a class="s" href="sms:01087817805" data-ev="sms">문자 보내기</a><a class="s" id="mailBtn" href="mailto:dbtkdqk@naver.com" data-ev="mail">메일 보내기</a></div>
+  <div class="mail">전화 · <a href="tel:01087817805" data-ev="call">010-8781-7805</a> &nbsp;·&nbsp; 메일 · <a href="mailto:dbtkdqk@naver.com" data-ev="mail">dbtkdqk@naver.com</a></div>
 </section>
 <footer>고동현 · 그로스 퍼포먼스 마케터</footer>
+<a class="fab" id="fab" href="#contact" data-ev="fab">연락하기</a>
 
 <script>
 const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -362,6 +431,7 @@ const CH=[
   li:[['직무별 AI 에이전트','6개 · 24시간'],['매일 판정하는 키워드','140개'],['입찰 조정','주 1회→매일'],['소재 시안 자동 판정','514→12건']],
   auto:'업무보고 <em>매일 18:02 자동</em> · 쓰면서 고친 앱 배포 <em>142회</em>'}
 ];
+const SH=[['키워드별 검색량·1위 입찰가',540],['매체별 광고 보관함',564],['퍼널 단계별 이탈',422],['AI가 고른 오늘 할 일',461]];
 const chEl=document.getElementById('chapters'),orbit=document.getElementById('orbit');
 CH.forEach((c,i)=>{
   let body='',k=0;
@@ -369,6 +439,7 @@ CH.forEach((c,i)=>{
   if(c.fun)body+='<div class="fun">'+c.fun.map(x=>'<div class="fr" style="--d:'+(k++)+'"><div class="lb">'+x[0]+'</div><div class="bx"><div class="tp">'+x[1]+'<b>'+x[2]+'</b></div><div class="bar"><i data-w="'+x[3]+'"></i></div><div class="fx">'+x[4]+'</div></div></div>').join('')+'</div>';
   if(c.win)body+='<div class="win"><span>결과 · '+c.win[0]+'</span><b>'+c.win[1]+'</b></div>';
   if(c.auto)body+='<div class="auto">자동화 · '+c.auto+'</div>';
+  if(SH[i])body+='<figure class="shot"><img src="shots/s'+(i+1)+'.jpg" width="1100" height="'+SH[i][1]+'" loading="lazy" alt="'+SH[i][0]+'"><figcaption>실제 화면 · '+SH[i][0]+' · 이름·키워드·금액은 흐렸습니다</figcaption></figure>';
   if(c.next)body+='<div class="next"><span class="ar">↓</span>'+c.next+'</div>';
   chEl.insertAdjacentHTML('beforeend','<div class="ch" data-i="'+i+'"><div class="card"><div class="no">0'+(i+1)+'</div><span class="yr">'+c.y+'</span><span class="rl">'+c.role+'</span><h3>'+c.t+'</h3><p>'+c.p+'</p>'+body+'</div></div>');
   orbit.insertAdjacentHTML('beforeend','<i></i>');
@@ -424,6 +495,28 @@ function count(el){const to=+el.dataset.to,dec=+(el.dataset.dec||0);const t0=per
 const io2=new IntersectionObserver(es=>{es.forEach((e,j)=>{if(!e.isIntersecting)return;const n=e.target;setTimeout(()=>n.classList.add('in'),j*140);
   n.querySelectorAll('[data-to]').forEach(count);io2.unobserve(n)})},{threshold:.4});
 document.querySelectorAll('.num').forEach(n=>io2.observe(n));
+// 도구 띠
+const TOOLS=['네이버 검색광고','메타 광고 관리자','구글 시트 · Apps Script','Claude Code','Codex','Notion','Higgsfield','Seedance','강남언니 · 바비톡 · 여신티켓','네이버 카페 · 블로그 · 플레이스'];
+const tl=TOOLS.map(t=>'<span>'+t+'</span>').join('');
+document.getElementById('track').innerHTML=tl+tl.replace(/<span>/g,'<span class="dup" aria-hidden="true">');
+
+// 회사별 꼬리표: 주소 끝 ?c=회사명
+const CO=(new URLSearchParams(location.search).get('c')||'').trim().slice(0,30);
+const MAILSUB=(CO?'['+CO+'] ':'')+'고동현님께 연락드립니다';
+document.getElementById('mailBtn').href='mailto:dbtkdqk@naver.com?subject='+encodeURIComponent(MAILSUB);
+if(CO){const hl=document.getElementById('hello');hl.textContent=CO+' 채용 담당자님, 반갑습니다';hl.hidden=false;document.title=CO+' 담당자님께 · 고동현의 궤도'}
+
+// 떠 있는 연락 버튼: 첫 화면을 지나면 보이고, 마지막 칸에서는 숨김
+const fab=document.getElementById('fab'),fin=document.getElementById('contact');
+function fabTick(){const r=fin.getBoundingClientRect();fab.classList.toggle('on',scrollY>innerHeight*.8&&r.top>innerHeight*.6)}
+addEventListener('scroll',fabTick,{passive:true});fabTick();
+
+// 방문 기록(구글 방문 분석): 측정 번호를 넣으면 켜짐
+const GA_ID='';
+if(GA_ID){const g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(g);
+  window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',GA_ID,CO?{campaign_source:CO}:{});
+  document.addEventListener('click',e=>{const a=e.target.closest('[data-ev]');if(a)gtag('event','contact_click',{kind:a.dataset.ev,company:CO||'none'})});}
+
 // 미리보기용: 주소 끝이 #all 이면 모두 펼침
 if(location.hash==='#all'){document.querySelectorAll('.num').forEach(n=>{n.classList.add('in');n.querySelectorAll('[data-to]').forEach(c=>c.firstChild.nodeValue=(+c.dataset.to).toFixed(+(c.dataset.dec||0)))});io.disconnect();io2.disconnect();document.querySelectorAll('.ch').forEach(c=>c.classList.add('on'));document.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.w+'%')}
 </script>
