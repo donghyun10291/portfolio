@@ -57,6 +57,7 @@ body{word-break:keep-all;font-family:"Pretendard Variable",Pretendard,sans-serif
 .hero{position:relative;min-height:100vh;background:radial-gradient(55% 45% at 82% 14%,rgba(118,92,190,.26),transparent 70%),radial-gradient(50% 42% at 10% 62%,rgba(38,112,150,.20),transparent 72%),radial-gradient(45% 35% at 66% 96%,rgba(176,98,82,.16),transparent 70%),radial-gradient(120% 90% at 50% 30%,var(--deephi),var(--deep) 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(40px,6vh,80px) 16px 120px;overflow:hidden}
 #heroAstro{width:min(240px,50vw,26vh);margin-bottom:14px;position:relative;z-index:2;cursor:pointer;transform:translate(var(--hx,0px),var(--hy,0px)) rotate(var(--hr,0deg)) scale(var(--hs,1));transition:transform .3s ease-out}
 #heroAstro.spin .astro{animation:warp 1s cubic-bezier(.3,.7,.3,1)}
+#web{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none}
 .hin{position:relative;z-index:2;will-change:transform,opacity}
 .eyebrow{display:inline-block;font-size:15px;font-weight:700;color:var(--blue2);background:var(--yel);border-radius:99px;padding:7px 16px;margin-bottom:18px}
 .hero h1{font-size:clamp(32px,6vw,62px);font-weight:800;line-height:1.18;letter-spacing:-.04em}
@@ -368,6 +369,7 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
 <!-- 첫 화면 -->
 <section class="hero" id="hero">
   <div class="stars" id="s1"></div>
+  <canvas id="web" aria-hidden="true"></canvas>
   <div class="shoot" style="top:14%;right:-140px"></div>
   <div class="shoot" style="top:40%;right:-140px;animation-delay:3.5s"></div>
   <div id="heroAstro" title="눌러 보세요" role="button" tabindex="0" aria-label="우주인 한 바퀴 돌리기"></div>
@@ -623,6 +625,97 @@ else{const rv=new IntersectionObserver(es=>{let j=0;es.forEach(e=>{if(!e.isInter
 
 // 미리보기용: 주소 끝이 #all 이면 모두 펼침
 if(location.hash==='#all'){document.querySelectorAll('.num').forEach(n=>{n.classList.add('in');n.querySelectorAll('[data-to]').forEach(c=>c.firstChild.nodeValue=(+c.dataset.to).toFixed(+(c.dataset.dec||0)))});io.disconnect();io2.disconnect();document.querySelectorAll('.ch').forEach(c=>c.classList.add('on'))}
+</script>
+<script>
+/* 첫 장면 거미줄: 받침 채널 → 매체 → 우주인(전환)으로 빛이 모인다 */
+(function(){
+const hero=document.getElementById('hero'),cv=document.getElementById('web');
+if(!hero||!cv||!cv.getContext)return;
+const cx=cv.getContext('2d'),RMw=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const CH=[['블로그',-160],['카페',-128],['플레이스 리뷰',-52],['커뮤니티',-16],['릴스 · 쇼츠',10],['시술 플랫폼',36],['유튜브',144],['디스코',170]];
+const MD=[['네이버 검색광고',-148],['메타',-32],['구글',150]];
+const rad=d=>d*Math.PI/180;
+let W=0,H=0,dpr=1,nodes=[],meds=[],links=[],parts=[],t0=performance.now(),last=0,spawn=0,run=true,mx=0,my=0,pulse=0,small=false;
+function md(a){let b=0,bd=1e9;MD.forEach((m,i)=>{let d=Math.abs(((a-m[1]+540)%360)-180);if(d<bd){bd=d;b=i}});return b}
+function md2(a){const f=md(a);let b=-1,bd=1e9;MD.forEach((m,i)=>{if(i===f)return;let d=Math.abs(((a-m[1]+540)%360)-180);if(d<bd){bd=d;b=i}});return b}
+function layout(){
+  const r=hero.getBoundingClientRect();W=r.width;H=r.height;dpr=Math.min(2,window.devicePixelRatio||1);
+  cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);small=W<700;
+  const ox=W/2,oy=H*0.5,rx=W*(small?.47:.45),ry=H*(small?.44:.41);
+  nodes=CH.map(c=>({n:c[0],a:c[1],x:ox+Math.cos(rad(c[1]))*rx,y:oy+Math.sin(rad(c[1]))*ry,z:.9+Math.random()*.4,ph:Math.random()*6}));
+  meds=MD.map(m=>({n:m[0],x:ox+Math.cos(rad(m[1]))*rx*.62,y:oy+Math.sin(rad(m[1]))*ry*.66,z:.5,ph:Math.random()*6}));
+  links=nodes.map((n,i)=>({a:n,b:meds[md(n.a)]}));
+}
+function core(){const a=document.getElementById('heroAstro'),h=hero.getBoundingClientRect();
+  if(!a)return{x:W/2,y:H*.3};const r=a.getBoundingClientRect();return{x:r.left-h.left+r.width/2,y:r.top-h.top+r.height*.55}}
+function pos(p,tm){return{x:p.x+Math.sin(tm/2400+p.ph)*4*p.z-mx*10*p.z,y:p.y+Math.cos(tm/2900+p.ph)*4*p.z-my*8*p.z}}
+function pill(x,y,txt,k,al){
+  const fs=k?(small?0:13.5):(small?0:12.5);if(!fs)return;
+  cx.font=(k?'800 ':'700 ')+fs+'px Pretendard,"Apple SD Gothic Neo",sans-serif';
+  const w=cx.measureText(txt).width+fs*1.6,h=fs*2.05;
+  cx.globalAlpha=al;cx.beginPath();cx.roundRect?cx.roundRect(x-w/2,y-h/2,w,h,h/2):cx.rect(x-w/2,y-h/2,w,h);
+  cx.fillStyle=k?'rgba(20,28,74,.86)':'rgba(16,20,52,.7)';cx.fill();
+  cx.lineWidth=k?1.5:1;cx.strokeStyle=k?'rgba(159,216,255,.75)':'rgba(201,211,255,.32)';cx.stroke();
+  cx.fillStyle=k?'#CFEAFF':'rgba(230,234,255,.82)';cx.textAlign='center';cx.textBaseline='middle';cx.fillText(txt,x,y+.5);cx.globalAlpha=1}
+function seg(a,b,f){cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(a.x+(b.x-a.x)*f,a.y+(b.y-a.y)*f);cx.stroke()}
+function ease(v){v=Math.max(0,Math.min(1,v));return 1-Math.pow(1-v,3)}
+function frame(now){
+  const tm=RMw?0:now-t0,g=RMw?1:1;
+  cx.setTransform(dpr,0,0,dpr,0,0);cx.clearRect(0,0,W,H);
+  const C=core(),P=nodes.map(n=>pos(n,tm)),M=meds.map(m=>pos(m,tm));
+  const k1=RMw?1:ease(tm/1400),k2=RMw?1:ease((tm-700)/1300),k3=RMw?1:ease((tm-1300)/1200);
+  /* 궤도 고리(거미줄 바탕) */
+  cx.save();cx.setLineDash([2,7]);cx.lineWidth=1;cx.strokeStyle='rgba(201,211,255,'+(.16*k1)+')';
+  [1,.62].forEach(s=>{cx.beginPath();cx.ellipse(W/2,H*.5,W*(small?.47:.45)*s,H*(small?.44:.41)*s,0,0,Math.PI*2);cx.stroke()});
+  cx.restore();
+  /* 채널끼리 거미줄 */
+  cx.lineWidth=1;cx.strokeStyle='rgba(201,211,255,'+(.2*k1)+')';
+  P.forEach((p,i)=>seg(p,P[(i+1)%P.length],k1));
+  cx.strokeStyle='rgba(201,211,255,'+(.1*k1)+')';P.forEach((p,i)=>{const s=md2(nodes[i].a);if(s>=0)seg(p,M[s],k1)});
+  cx.strokeStyle='rgba(201,211,255,'+(.12*k1)+')';
+  M.forEach((m,i)=>seg(m,M[(i+1)%M.length],k1));
+  /* 채널 → 매체 점선 */
+  cx.save();cx.setLineDash([5,6]);cx.lineDashOffset=-tm/60;cx.lineWidth=1.6;cx.strokeStyle='rgba(201,211,255,'+(.42*k1)+')';
+  links.forEach((l,i)=>seg(P[i],M[meds.indexOf(l.b)],k1));cx.restore();
+  /* 매체 → 우주인 노란 실선 */
+  cx.save();cx.lineWidth=2.4;cx.shadowColor='rgba(159,216,255,.9)';cx.shadowBlur=10;cx.strokeStyle='rgba(159,216,255,'+(.55*k2)+')';
+  M.forEach(m=>seg(m,C,k2));cx.restore();
+  /* 빛 알갱이 */
+  if(!RMw&&k2>=1){spawn-=now-last;if(spawn<=0&&parts.length<(small?22:40)){spawn=small?320:210;const i=Math.floor(Math.random()*nodes.length);parts.push({i,m:meds.indexOf(links[i].b),s:0,v:.00042+Math.random()*.0003})}}
+  const dt=Math.min(50,now-last);last=now;
+  cx.save();cx.globalCompositeOperation='lighter';
+  parts=parts.filter(p=>{p.s+=p.v*dt;let a,b,f;if(p.s<1){a=P[p.i];b=M[p.m];f=p.s}else{a=M[p.m];b=C;f=p.s-1}
+    if(p.s>=2){pulse=1;return false}
+    const x=a.x+(b.x-a.x)*f,y=a.y+(b.y-a.y)*f,big=p.s>=1;
+    const gr=cx.createRadialGradient(x,y,0,x,y,big?10:7);gr.addColorStop(0,big?'rgba(220,240,255,.95)':'rgba(230,234,255,.85)');gr.addColorStop(1,'rgba(159,216,255,0)');
+    cx.fillStyle=gr;cx.beginPath();cx.arc(x,y,big?10:7,0,Math.PI*2);cx.fill();return true});
+  cx.restore();
+  /* 우주인 둘레 빛 */
+  pulse*=.94;const cr=(small?54:78)+pulse*14;
+  const cg=cx.createRadialGradient(C.x,C.y,cr*.35,C.x,C.y,cr*1.5);cg.addColorStop(0,'rgba(159,216,255,'+(.0)+')');cg.addColorStop(.55,'rgba(159,216,255,'+((.12+pulse*.18)*k3)+')');cg.addColorStop(1,'rgba(159,216,255,0)');
+  cx.fillStyle=cg;cx.beginPath();cx.arc(C.x,C.y,cr*1.5,0,Math.PI*2);cx.fill();
+  /* 글자 뒤는 옅게 지움 */
+  const hin=document.getElementById('hin');if(hin){const r=hin.getBoundingClientRect(),h=hero.getBoundingClientRect();
+    const x=r.left-h.left+r.width/2,y=r.top-h.top+r.height/2,R=Math.max(r.width,r.height)*.62;
+    cx.save();cx.globalCompositeOperation='destination-out';cx.translate(x,y);cx.scale(r.width/Math.max(r.width,r.height)*1.05,r.height/Math.max(r.width,r.height)*1.1);
+    const eg=cx.createRadialGradient(0,0,R*.3,0,0,R);eg.addColorStop(0,'rgba(0,0,0,.82)');eg.addColorStop(.7,'rgba(0,0,0,.55)');eg.addColorStop(1,'rgba(0,0,0,0)');
+    cx.fillStyle=eg;cx.beginPath();cx.arc(0,0,R,0,Math.PI*2);cx.fill();cx.restore()}
+  /* 점·이름표 */
+  P.forEach((p,i)=>{cx.globalAlpha=k1;cx.fillStyle='#E6EAFF';cx.beginPath();cx.arc(p.x,p.y,small?3:3.5,0,Math.PI*2);cx.fill();cx.globalAlpha=1;
+    if(!small)pill(p.x,p.y,nodes[i].n,false,k1*.95)});
+  M.forEach((m,i)=>{cx.save();cx.shadowColor='rgba(159,216,255,.9)';cx.shadowBlur=14;cx.globalAlpha=k2;cx.fillStyle='#9FD8FF';cx.beginPath();cx.arc(m.x,m.y,small?4:5,0,Math.PI*2);cx.fill();cx.restore();
+    pill(m.x,m.y,meds[i].n,true,k2)});
+  if(!RMw&&run)requestAnimationFrame(frame);
+}
+function start(){if(!run){run=true;last=performance.now();requestAnimationFrame(frame)}}
+layout();last=performance.now();
+if(RMw){frame(performance.now());addEventListener('resize',()=>{layout();frame(performance.now())});addEventListener('load',()=>{layout();frame(performance.now())});return}
+requestAnimationFrame(frame);
+new ResizeObserver(layout).observe(hero);
+new IntersectionObserver(e=>{if(e[0].isIntersecting)start();else run=false}).observe(hero);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)run=false;else start()});
+hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();mx=(e.clientX-r.left)/r.width-.5;my=(e.clientY-r.top)/r.height-.5});
+})();
 </script>
 </body>
 </html>
