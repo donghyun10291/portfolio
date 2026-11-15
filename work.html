@@ -388,6 +388,21 @@ html,body{overflow-x:clip}
  .dec td{border:0;padding:4px 14px}
  .dec td:before{content:attr(data-l);display:block;font-size:11px;font-weight:800;color:var(--mute)}
 }
+.sec{position:relative;padding:84px 16px;background:var(--deep)}
+.sec .in2{max-width:1060px;margin:0 auto}
+.sec .k{text-align:center;color:var(--yel);font-weight:800;font-size:15px}
+.sec h2{text-align:center;font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.28;margin-top:8px}
+.sec h2 em{font-style:normal;color:var(--yel)}
+.sec .lead{text-align:center;color:var(--soft);font-size:16.5px;line-height:1.65;margin-top:12px}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.why>div{border:1px solid var(--line);border-radius:20px;padding:24px 22px;background:rgba(255,255,255,.04)}
+.why .no{font-size:13px;font-weight:800;color:var(--blue)}
+.why h3{font-size:19px;font-weight:800;line-height:1.4;margin-top:6px}
+.why p{font-size:14.5px;color:var(--soft);line-height:1.65;margin-top:10px}
+.why .pf{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:13.5px;color:var(--mute)}
+.why .pf b{display:block;font-size:26px;color:var(--yel);letter-spacing:-.03em}
+@media (max-width:860px){.why{grid-template-columns:1fr}.sec{padding:60px 16px}}
+@media print{#why{break-before:page;break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -468,6 +483,16 @@ html,body{overflow-x:clip}
 </section>
 
 <section class="d90" id="sum"><div class="stars" id="s9"></div><div class="kk" data-rv>01 · 한 장 요약</div><h2 data-rv>광고 성과를<br><em>병원 수납</em>으로 셉니다.</h2><div class="dd"><div data-rv><b>역할</b><h3>퍼포먼스 마케팅 총괄</h3><p>매체 운영, 예산 배분, 측정 구조 설계를 혼자 맡았습니다.</p></div><div data-rv><b>업종</b><h3>병원 · 의료</h3><p>상담 뒤 내원과 시술·수술로 매출이 나는 고관여 업종입니다.</p></div><div data-rv><b>매체</b><h3>네이버 · 메타 · 구글</h3><p>파워링크, 플레이스, 메타 리드 광고를 함께 돌립니다.</p></div><div data-rv><b>받침 채널</b><h3>블로그 · 카페 · 커뮤니티 · 유튜브 · 디스코</h3><p>검색 전에 믿음을 쌓는 자리입니다.</p></div><div data-rv><b>측정</b><h3>픽셀 · GA4 · UTM · 병원 전산 대조</h3><p>신청부터 수술까지 단계마다 기록합니다.</p></div><div data-rv><b>AI·자동화</b><h3>광고 운영 앱과 에이전트 팀</h3><p>광고 판정·문자·보고를 앱 하나로 묶었습니다.</p></div></div></section>
+<!-- 왜 저인가 -->
+<section class="sec" id="why"><div class="in2">
+  <div class="k" data-rv>채용하시면</div>
+  <h2 data-rv>첫 달부터 <em>이 세 가지</em>를 가져옵니다</h2>
+  <div class="why">
+    <div data-rv><div class="no">01 · 매출 기준 운영</div><h3>광고비가 아니라<br>매출로 판단합니다</h3><p>광고 리드를 병원 전산 수술 기록과 맞춥니다. 클릭이 아니라 매출까지 간 광고에 예산을 몰았습니다.</p><div class="pf"><b>광고 리드 ↔ 수술 기록 대조</b>매출까지 간 광고에 예산을 다시 나눕니다</div></div>
+    <div data-rv><div class="no">02 · 퍼널 진단</div><h3>새는 단계를<br>숫자로 찾아 막습니다</h3><p>신청 · 통화 · 예약 · 내원 · 수술을 한 줄로 잇고, 단계마다 빠지는 수를 매일 셉니다. 가장 많이 새는 곳부터 고칩니다.</p><div class="pf"><b>매일 세는 다섯 단계 퍼널</b>가장 크게 새던 첫 통화부터 고쳤습니다</div></div>
+    <div data-rv><div class="no">03 · AI 자동화</div><h3>반복 업무는<br>AI 에이전트 팀이 합니다</h3><p>키워드 조사 · 카피 · 심의 검수 · 경쟁 분석 · 보고를 에이전트가 돌립니다. 저는 결정과 개선에 시간을 씁니다.</p><div class="pf"><b>혼자서 마케팅팀 하나 분량</b>운영 앱과 대시보드를 직접 기획해 만든 결과</div></div>
+  </div>
+</div></section>
 
 <!-- 여정 -->
 <section class="journey" id="journey">

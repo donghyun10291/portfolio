@@ -305,6 +305,40 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
   .fab{right:12px;bottom:12px;padding:12px 18px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 span,.hero p.sub,.pills span,.hbtn,.big,.card li,.k3,.win,[data-rv],.k3 .bar i{opacity:1;transform:none}.shot{clip-path:none}}
+
+.shots2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.shots2 .shot,.shots1 .shot{margin-top:12px}
+.shots2 figcaption,.shots1 figcaption{font-size:12px;line-height:1.45}
+.shotlbl{margin-top:20px;font-size:12px;font-weight:800;color:var(--yel);letter-spacing:.02em}
+.sec{position:relative;padding:84px 16px;background:var(--deep)}
+.sec .in2{max-width:1060px;margin:0 auto}
+.sec .k{text-align:center;color:var(--yel);font-weight:800;font-size:15px}
+.sec h2{text-align:center;font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.28;margin-top:8px}
+.sec h2 em{font-style:normal;color:var(--yel)}
+.sec .lead{text-align:center;color:var(--soft);font-size:16.5px;line-height:1.65;margin-top:12px}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.why>div{border:1px solid var(--line);border-radius:20px;padding:24px 22px;background:rgba(255,255,255,.04)}
+.why .no{font-size:13px;font-weight:800;color:var(--blue)}
+.why h3{font-size:19px;font-weight:800;line-height:1.4;margin-top:6px}
+.why p{font-size:14.5px;color:var(--soft);line-height:1.65;margin-top:10px}
+.why .pf{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:13.5px;color:var(--mute)}
+.why .pf b{display:block;font-size:26px;color:var(--yel);letter-spacing:-.03em}
+.flow{margin:28px auto 0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;max-width:900px}
+.flow span{font-size:13.5px;font-weight:700;background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:99px;padding:7px 12px}
+.flow i{font-style:normal;color:var(--mute);font-size:12px}
+.flow .me{background:var(--yel);color:var(--ink);border-color:var(--yel);font-weight:900}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.roles>div{border:1px solid var(--line);border-radius:16px;padding:18px;background:rgba(255,255,255,.03)}
+.roles h4{font-size:16px;font-weight:800}.roles h4 small{display:block;font-size:12px;color:var(--blue);font-weight:800;margin-bottom:4px}
+.roles p{font-size:14px;color:var(--soft);line-height:1.6;margin-top:6px}
+.gate{display:grid;grid-template-columns:1fr 1.15fr;gap:26px;align-items:center;margin-top:46px;border:1px solid var(--line);border-radius:22px;padding:26px;background:rgba(255,255,255,.03)}
+.gate h3{font-size:22px;font-weight:800;line-height:1.4}.gate h3 em{font-style:normal;color:var(--yel)}
+.gate ul{list-style:none;margin-top:14px}.gate li{font-size:14.5px;color:var(--soft);line-height:1.6;padding:6px 0 6px 18px;position:relative}
+.gate li:before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;background:var(--yel)}
+.gate .gs{display:grid;grid-template-columns:.55fr 1fr;gap:10px;align-items:start}
+.gate .gs .shot{margin-top:0}
+@media (max-width:860px){.why,.roles{grid-template-columns:1fr}.gate{grid-template-columns:1fr;padding:18px}.sec{padding:60px 16px}}
+@media (max-width:600px){.shots2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -384,6 +418,25 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
   <div class="scrollhint"><i></i>아래로 내려 보세요</div>
 </section>
 
+
+<!-- 숫자 -->
+<section class="band" id="proof">
+  <h2 data-rv>석 달 만에 <em>광고부터 매출까지</em> 단계마다 올렸습니다</h2>
+  <p class="bs" data-rv>맡은 첫 달과 지금을 비교했습니다. 병원 전산 기록 기준입니다.</p>
+  <div class="nums"><div class="num"><div class="s">검증</div><div class="n"><span data-to="4.8" data-dec="1">4.8</span><small>배</small></div><div class="t">메타 리드 · 월 신청</div><div class="d">소재 · 오퍼 · 신청 양식</div><div class="w"><b>어떻게</b>고객이 실제로 쓴 말로 소재와 양식을 다시 썼습니다</div></div><div class="num"><div class="s">상담</div><div class="n"><span data-to="3.8" data-dec="1">3.8</span><small>배</small></div><div class="t">통화 연결률</div><div class="d">13→50%</div><div class="w"><b>어떻게</b>리드가 들어오면 바로 첫 통화를 배정했습니다</div></div><div class="num"><div class="s">전환</div><div class="n"><span data-to="2.5" data-dec="1">2.5</span><small>배</small></div><div class="t">월 수술</div><div class="d">예약 뒤 내원율 58→68%</div><div class="w"><b>어떻게</b>매출까지 간 광고에 예산을 몰았습니다</div></div><div class="num top"><div class="s">결과</div><div class="n"><span data-to="3.5" data-dec="1">3.5</span><small>배</small></div><div class="t">병원 매출</div><div class="d">네 단계를 한 바퀴로</div><div class="w"><b>어떻게</b>단계마다 빠지는 수를 매일 세고 가장 늦는 곳부터 고쳤습니다</div></div></div>
+</section>
+
+<!-- 왜 저인가 -->
+<section class="sec" id="why"><div class="in2">
+  <div class="k" data-rv>채용하시면</div>
+  <h2 data-rv>첫 달부터 <em>이 세 가지</em>를 가져옵니다</h2>
+  <div class="why">
+    <div data-rv><div class="no">01 · 매출 기준 운영</div><h3>광고비가 아니라<br>매출로 판단합니다</h3><p>광고 리드를 병원 전산 수술 기록과 맞춥니다. 클릭이 아니라 매출까지 간 광고에 예산을 몰았습니다.</p><div class="pf"><b>광고 리드 ↔ 수술 기록 대조</b>매출까지 간 광고에 예산을 다시 나눕니다</div></div>
+    <div data-rv><div class="no">02 · 퍼널 진단</div><h3>새는 단계를<br>숫자로 찾아 막습니다</h3><p>신청 · 통화 · 예약 · 내원 · 수술을 한 줄로 잇고, 단계마다 빠지는 수를 매일 셉니다. 가장 많이 새는 곳부터 고칩니다.</p><div class="pf"><b>매일 세는 다섯 단계 퍼널</b>가장 크게 새던 첫 통화부터 고쳤습니다</div></div>
+    <div data-rv><div class="no">03 · AI 자동화</div><h3>반복 업무는<br>AI 에이전트 팀이 합니다</h3><p>키워드 조사 · 카피 · 심의 검수 · 경쟁 분석 · 보고를 에이전트가 돌립니다. 저는 결정과 개선에 시간을 씁니다.</p><div class="pf"><b>혼자서 마케팅팀 하나 분량</b>운영 앱과 대시보드를 직접 기획해 만든 결과</div></div>
+  </div>
+</div></section>
+
 <!-- 여정 -->
 <section class="journey" id="journey">
   <div class="stars" id="s2"></div>
@@ -407,6 +460,27 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
     <div class="chapters" id="chapters"><i class="jfill"></i><i class="comet"></i></div>
   </div>
 </section>
+
+<!-- AI 자동화 -->
+<section class="sec" id="ai"><div class="in2">
+  <div class="k" data-rv>AI 자동화</div>
+  <h2 data-rv>매일 도는 일은 <em>AI 에이전트 팀</em>이,<br>결정은 제가 합니다</h2>
+  <p class="lead" data-rv>광고 운영 앱과 매출 대시보드를 직접 기획했습니다.<br>AI 개발 도구(Claude Code · Codex)를 지휘해 실제로 쓰는 앱으로 만들었습니다.</p>
+  <div class="flow" data-rv><span>키워드 조사</span><i>→</i><span>경쟁 광고 수집</span><i>→</i><span>카피</span><i>→</i><span>시안</span><i>→</i><span>심의 검수</span><i>→</i><span>성과 대조</span><i>→</i><span>보고</span><i>→</i><span class="me">고동현 결정</span></div>
+  <div class="roles">
+    <div data-rv><h4><small>키워드 에이전트</small>살 키워드를 고릅니다</h4><p>검색량 · 경쟁도 · 1위 입찰가를 나란히 놓고 우선순위를 매깁니다.</p></div>
+    <div data-rv><h4><small>경쟁 분석 에이전트</small>경쟁 광고를 매일 모읍니다</h4><p>매체별 경쟁 광고와 순위를 기록하고, 바뀐 것만 경보로 올립니다.</p></div>
+    <div data-rv><h4><small>카피 에이전트</small>고객이 쓴 말로 씁니다</h4><p>상담 기록과 리뷰의 말로 여러 안을 쓰고, 안마다 소구 이유를 붙입니다.</p></div>
+    <div data-rv><h4><small>심의 검수 에이전트</small>내보내기 전에 거릅니다</h4><p>의료광고 기준과 매체 정책으로 통과 · 수정 · 반려를 판정합니다.</p></div>
+    <div data-rv><h4><small>성과 대조 에이전트</small>매출까지 맞춥니다</h4><p>광고 리드를 병원 전산 기록과 자동으로 대조해 진짜 성과를 찾습니다.</p></div>
+    <div data-rv><h4><small>보고 에이전트</small>결론부터 보고합니다</h4><p>주간 성과 · 변경 이력 · 이상 경보를 모아 결론 먼저 정리합니다.</p></div>
+  </div>
+  <div class="gate">
+    <div data-rv><h3>빨라진 만큼,<br><em>되돌리기 어려운 일</em>에는 문을 달았습니다</h3>
+      <ul><li>입찰가는 앱이 직접 바꾸지 않습니다. 등록된 맥의 지문 승인 뒤에만 반영됩니다.</li><li>문자 발송은 본인 확인 → 인원 · 문구 확인 → 최종 승인을 거칩니다.</li><li>발송 직전에 문구가 바뀌면 다시 승인받습니다.</li></ul></div>
+    <div class="gs"><figure class="shot"><img src="img/bids.png" alt="입찰가 승인 화면" loading="lazy"><figcaption>입찰가 승인 · 지문으로만 열립니다.</figcaption></figure><figure class="shot"><img src="img/crm.png" alt="문자 발송 화면" loading="lazy"><figcaption>문자 발송 · 세 번 확인 뒤 승인합니다.</figcaption></figure></div>
+  </div>
+</div></section>
 
 <!-- 마지막 -->
 <section class="final" id="contact">
@@ -469,17 +543,15 @@ const CH=[
   pl:'radial-gradient(circle at 32% 30%,rgba(255,255,255,.12),transparent 26%,rgba(0,0,0,.30) 44%,rgba(0,0,0,.72) 58%,rgba(0,0,0,.94) 70%),radial-gradient(closest-side,transparent 92%,rgba(232,170,130,.35) 98%,transparent 100%),radial-gradient(ellipse 20% 6% at 48% 6%,rgba(255,250,244,.92),transparent 75%),url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%3E%3Cfilter%20id%3D%22a%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.014%20.02%22%20numOctaves%3D%225%22%20seed%3D%2211%22%2F%3E%3CfeColorMatrix%20values%3D%220%200%200%200%20.36%200%200%200%200%20.16%200%200%200%200%20.08%205%200%200%200%20-2.75%22%2F%3E%3C%2Ffilter%3E%3C%2Fsvg%3E) center/cover,radial-gradient(ellipse 30% 14% at 46% 78%,rgba(214,150,96,.5),transparent 72%),radial-gradient(circle at 40% 38%,#D9905A,#BB6638 48%,#8A3F20 80%,#5A2612)',glow:'rgba(230,130,80,.16)',tex:'url(\"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27400%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%27.03 .03%27 numOctaves=%275%27 seed=%2711%27/%3E%3CfeColorMatrix type=%27saturate%27 values=%270%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27/%3E%3C/svg%3E\")',to:.75,rg:0,
   t:'두 번째 문 · 검증<br>신청 직전에 보는 글까지 관리했습니다',
   p:'고객은 블로그·쇼츠·카페·플레이스 리뷰에서 병원을 확인하고, 다른 병원 광고와 나란히 비교합니다. 그 자리에서 신청이 정해집니다. 검증 글과 광고 소재, 오퍼, 신청 양식을 고객이 실제로 쓴 말로 맞췄습니다.',
-  li:[['메타 리드 · 월 신청','4.8배']],
   auto:'블로그 · 카페 <em>원고 자동 작성</em> · <em>자동 업로드</em> · 원고 <em>검수</em> · 노출 <em>로직 분석</em> · 부정 리뷰 <em>자동 감시</em> · 숏폼 <em>반응 분석</em>',
   next:'검증을 지나 온 리드는 첫 통화에서 갈립니다.'},
  {y:'2026',role:'퍼포먼스 마케팅 팀장',item:4,ps:1.1,pr:110,
   pl:'radial-gradient(circle at 32% 30%,rgba(255,255,255,.12),transparent 26%,rgba(0,0,0,.30) 44%,rgba(0,0,0,.72) 58%,rgba(0,0,0,.94) 70%),radial-gradient(ellipse 13% 7% at 62% 64%,#B5523A,#C9714F 45%,rgba(220,160,120,.6) 65%,transparent 75%),linear-gradient(176deg,#B9A58A 0%,#D9C9AE 8%,#EFE5D2 14%,#C79E70 20%,#E8D9BE 26%,#B98252 32%,#F2E7D3 38%,#DCC3A0 44%,#F4EBDA 50%,#C29467 56%,#E9D7B8 61%,#A9744A 67%,#EADCC4 73%,#CDB08A 80%,#E6D9C3 87%,#B6A285 94%,#8E7F6A 100%)',glow:'rgba(232,206,166,.16)',tex:'url(\"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27400%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%27.004 .09%27 numOctaves=%274%27 seed=%275%27/%3E%3CfeColorMatrix type=%27saturate%27 values=%270%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27/%3E%3C/svg%3E\")',to:.7,rg:0,
   t:'세 번째 문 · 전환<br>리드부터 매출까지<br>모든 단계를 올렸습니다',
-  p:'리드가 몰리면 첫 통화가 늦어집니다. 리드 관리 자동화(CRM)로 단계마다 빠지는 수를 매일 세고, 가장 늦는 곳부터 고쳤습니다. 숫자는 모두 맡은 첫 달과 지금을 비교했습니다.',
-  fun:[['상담','통화 연결률','3.8배',100,'13→50% · 리드가 들어오면 바로 첫 통화 배정'],
-       ['방문','예약 뒤 내원율','58→68%',72,'병원 전산 예약을 매일 가져와 전날 한 번 더 확인'],
-       ['전환','월 수술','2.5배',58,'매출까지 간 광고에 예산 집중']],
-  win:['병원 매출','3.5배'],
+  p:'리드가 몰리면 첫 통화가 늦어집니다. 리드 관리 자동화(CRM)로 단계마다 빠지는 수를 매일 세고, 가장 늦는 곳부터 고쳤습니다.',
+  fun:[['상담','통화 연결률','바로 배정',100,'리드가 들어오면 그 자리에서 첫 통화를 배정'],
+       ['방문','예약 뒤 내원율','전날 확인',72,'병원 전산 예약을 매일 가져와 전날 한 번 더 확인'],
+       ['전환','월 수술','예산 집중',58,'매출까지 간 광고에 예산 집중']],
   auto:'플랫폼 신청 <em>메신저 알림</em> · 메타 양식 <em>자동 변환</em> · 상담 녹취 <em>분석</em>',
   next:'이제 어느 경로가 매출까지 갔는지 재야 했습니다.'},
  {y:'2026',role:'AI 에이전트 팀 설계',item:5,ps:.6,pr:170,
@@ -491,21 +563,17 @@ const CH=[
   tools:'네이버 검색광고 · 메타 광고 · 구글 시트 · Claude Code · Codex · Notion',
   ar:'↻',next:'측정한 답은 다시 첫 번째 문, 노출 예산으로 돌아갑니다.'}
 ];
-const MS=[
-'<div class="mini" data-rv><div class="mh">키워드 고르는 표<small>매일 자동 갱신</small></div><table><tr><th>키워드</th><th>검색량</th><th>1위 자리값</th><th>판단</th></tr><tr><td>가</td><td><i class="bx" style="--w:48%"></i></td><td>낮음</td><td><span class="tg g">먼저 씀</span></td></tr><tr><td>나</td><td><i class="bx" style="--w:22%"></i></td><td>낮음</td><td><span class="tg g">먼저 씀</span></td></tr><tr><td>다</td><td><i class="bx" style="--w:100%"></i></td><td>높음</td><td><span class="tg y">뒤로</span></td></tr></table><div class="mf">검색이 가장 많은 키워드를 <b>뒤로</b> 뺐습니다. 1위 자리값까지 같이 따졌기 때문입니다.</div></div>',
-'<div class="mini" data-rv><div class="mh">경쟁 광고 보관함<small>매일 아침 정리</small></div><table><tr><td><span class="tg r">빨강</span></td><td>광고비 잔액이 곧 바닥납니다</td><td class="ac">충전 요청</td></tr><tr><td><span class="tg y">주의</span></td><td>경쟁 병원이 모바일에서 바로 아래 순위로 들어왔습니다</td><td class="ac">문구 비교</td></tr><tr><td><span class="tg y">주의</span></td><td>검색 많은 키워드에 새 경쟁 광고가 붙었습니다</td><td class="ac">순위 지킴</td></tr></table><div class="mf">경쟁 병원 광고를 매체별로 <b>매일</b> 모읍니다. 빨강부터 처리합니다.</div></div>',
-'',
-'<div class="mini" data-rv><div class="mh">현황판 · 오늘 할 일<small>사람이 정할 것만</small></div><table><tr><td><span class="tg y">확인</span></td><td>성과 자료 날짜<small>자료가 오래돼 예산 제안을 멈춰 뒀어요</small></td><td class="ac">자료 확인</td></tr><tr><td><span class="tg y">결정</span></td><td>카피 승인·반려<small>사람이 승인해야 다음으로 넘어가요</small></td><td class="ac">결정하기</td></tr><tr><td><span class="tg y">결정</span></td><td>자동 갱신 허락<small>사람이 정할 일이에요</small></td><td class="ac">결정하기</td></tr></table><div class="mf">AI가 순위·경쟁 신호·랜딩 변화를 읽고, <b>바꿀 것만</b> 남깁니다.</div></div>'];
+const MS=['<div class="shots2"><figure class="shot"><img src="img/keywords.jpg" alt="키워드 화면" loading="lazy"><figcaption>키워드 · 검색량과 경쟁도로 우선순위를 매깁니다.</figcaption></figure><figure class="shot"><img src="img/library_b.png" alt="보관함 화면" loading="lazy"><figcaption>보관함 · 잔액 경보와 경쟁 순위가 매일 쌓입니다.</figcaption></figure></div>', '<div class="shots1"><figure class="shot"><img src="img/review.png" alt="검수함 화면" loading="lazy"><figcaption>검수함 · 카피마다 소구 이유가 붙고, 제가 승인·반려합니다.</figcaption></figure></div>', '<div class="shots2"><figure class="shot"><img src="shots/s3.jpg" alt="퍼널 화면" loading="lazy"><figcaption>퍼널 · 단계마다 몇 명이 빠지는지 매일 셉니다.</figcaption></figure><figure class="shot"><img src="img/rev_b.png" alt="매출 대시보드 화면" loading="lazy"><figcaption>매출 대시보드 · 광고 리드가 수술까지 얼마나 남는지 봅니다.</figcaption></figure></div>', '<div class="shots2"><figure class="shot"><img src="img/home_b.png" alt="현황판 화면" loading="lazy"><figcaption>현황판 · 사람이 정할 일만 띄웁니다.</figcaption></figure><figure class="shot"><img src="img/funnel_b.png" alt="퍼널 검산 화면" loading="lazy"><figcaption>숫자가 맞지 않으면 앱이 판단을 멈춥니다.</figcaption></figure></div>'];
 const CN=['노출','검증','전환','측정'];
 const chEl=document.getElementById('chapters'),orbit=document.getElementById('orbit');
 CH.forEach((c,i)=>{
   let body='',k=0;
   if(c.li)body+='<ul>'+c.li.map(x=>'<li data-rv="l">'+x[0]+'<b>'+x[1]+'</b></li>').join('')+'</ul>';
-  if(c.fun)body+='<div class="fun">'+c.fun.map(x=>'<div class="k3" data-rv><div class="kl">'+x[0]+'</div><b>'+x[2]+'</b><div class="t">'+x[1]+'</div><i class="bar"><i style="--w:'+x[3]+'%"></i></i><div class="fx">'+x[4]+'</div></div>').join('')+'</div>';
+  if(c.fun)body+='<div class="fun">'+c.fun.map(x=>'<div class="k3" data-rv><div class="kl">'+x[0]+'</div><b>'+x[2]+'</b><div class="t">'+x[1]+'</div><div class="fx">'+x[4]+'</div></div>').join('')+'</div>';
   if(c.win)body+='<div class="win" data-rv="pop"><span>결과 · '+c.win[0]+'</span><b>'+c.win[1]+'</b></div>';
   if(c.auto)body+='<div class="auto" data-rv>자동화 · '+c.auto+'</div>';
   if(c.tools)body+='<div class="auto" data-rv>쓰는 도구 · '+c.tools+'</div>';
-  if(MS[i])body+=MS[i];
+  if(MS[i])body+=(i?'':'<div class="shotlbl">실제 운영 화면 · 누르면 크게 보입니다 · 이름과 숫자 일부는 가렸습니다</div>')+MS[i];
   if(c.next)body+='<div class="next" data-rv><span class="ar">'+(c.ar||'↓')+'</span>'+c.next+'</div>';
   chEl.insertAdjacentHTML('beforeend','<div class="ch" id="ch'+i+'" data-i="'+i+'"><div class="card" style="--gl:'+c.glow+'"><i class="mp" style="background:'+c.pl+'"></i><div class="no">0'+(i+1)+'</div><span class="yr">'+c.y+'</span><span class="rl">'+c.role+'</span><h3 data-rv>'+c.t+'</h3><p data-rv>'+c.p+'</p>'+body+'</div></div>');
   orbit.insertAdjacentHTML('beforeend','<i></i>');
