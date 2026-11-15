@@ -468,7 +468,7 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
   <p class="lead" data-rv>광고 운영 앱과 매출 대시보드를 직접 기획했습니다.<br>AI 개발 도구(Claude Code · Codex)를 지휘해 실제로 쓰는 앱으로 만들었습니다.</p>
   <div class="flow" data-rv><span>키워드 조사</span><i>→</i><span>경쟁 광고 수집</span><i>→</i><span>카피</span><i>→</i><span>시안</span><i>→</i><span>심의 검수</span><i>→</i><span>성과 대조</span><i>→</i><span>보고</span><i>→</i><span class="me">고동현 결정</span></div>
   <div class="roles">
-    <div data-rv><h4><small>키워드 에이전트</small>살 키워드를 고릅니다</h4><p>검색량 · 경쟁도 · 1위 입찰가를 나란히 놓고 우선순위를 매깁니다.</p></div>
+    <div data-rv><h4><small>키워드 에이전트</small>구매할 키워드를 고릅니다</h4><p>검색량 · 경쟁도 · 1위 입찰가를 나란히 놓고 우선순위를 매깁니다.</p></div>
     <div data-rv><h4><small>경쟁 분석 에이전트</small>경쟁 광고를 매일 모읍니다</h4><p>매체별 경쟁 광고와 순위를 기록하고, 바뀐 것만 경보로 올립니다.</p></div>
     <div data-rv><h4><small>카피 에이전트</small>고객이 쓴 말로 씁니다</h4><p>상담 기록과 리뷰의 말로 여러 안을 쓰고, 안마다 소구 이유를 붙입니다.</p></div>
     <div data-rv><h4><small>심의 검수 에이전트</small>내보내기 전에 거릅니다</h4><p>의료광고 기준과 매체 정책으로 통과 · 수정 · 반려를 판정합니다.</p></div>
@@ -476,7 +476,7 @@ footer{text-align:center;color:#5D689F;font-size:13px;padding:24px 16px 34px;bac
     <div data-rv><h4><small>보고 에이전트</small>결론부터 보고합니다</h4><p>주간 성과 · 변경 이력 · 이상 경보를 모아 결론 먼저 정리합니다.</p></div>
   </div>
   <div class="gate">
-    <div data-rv><h3>빨라진 만큼,<br><em>되돌리기 어려운 일</em>에는 문을 달았습니다</h3>
+    <div data-rv><h3>빨라진 만큼,<br><em>되돌리기 어려운 일</em>에는 승인 절차를 넣었습니다</h3>
       <ul><li>입찰가는 앱이 직접 바꾸지 않습니다. 등록된 맥의 지문 승인 뒤에만 반영됩니다.</li><li>문자 발송은 본인 확인 → 인원 · 문구 확인 → 최종 승인을 거칩니다.</li><li>발송 직전에 문구가 바뀌면 다시 승인받습니다.</li></ul></div>
     <div class="gs"><figure class="shot"><img src="img/bids.png" alt="입찰가 승인 화면" loading="lazy"><figcaption>입찰가 승인 · 지문으로만 열립니다.</figcaption></figure><figure class="shot"><img src="img/crm.png" alt="문자 발송 화면" loading="lazy"><figcaption>문자 발송 · 세 번 확인 뒤 승인합니다.</figcaption></figure></div>
   </div>
@@ -563,7 +563,7 @@ const CH=[
   tools:'네이버 검색광고 · 메타 광고 · 구글 시트 · Claude Code · Codex · Notion',
   ar:'↻',next:'측정한 답은 다시 첫 번째 문, 노출 예산으로 돌아갑니다.'}
 ];
-const MS=['<div class="shots2"><figure class="shot"><img src="img/keywords.jpg" alt="키워드 화면" loading="lazy"><figcaption>키워드 · 검색량과 경쟁도로 우선순위를 매깁니다.</figcaption></figure><figure class="shot"><img src="img/library_b.png" alt="보관함 화면" loading="lazy"><figcaption>보관함 · 잔액 경보와 경쟁 순위가 매일 쌓입니다.</figcaption></figure></div>', '<div class="shots1"><figure class="shot"><img src="img/review.png" alt="검수함 화면" loading="lazy"><figcaption>검수함 · 카피마다 소구 이유가 붙고, 제가 승인·반려합니다.</figcaption></figure></div>', '<div class="shots2"><figure class="shot"><img src="shots/s3.jpg" alt="퍼널 화면" loading="lazy"><figcaption>퍼널 · 단계마다 몇 명이 빠지는지 매일 셉니다.</figcaption></figure><figure class="shot"><img src="img/rev_b.png" alt="매출 대시보드 화면" loading="lazy"><figcaption>매출 대시보드 · 광고 리드가 수술까지 얼마나 남는지 봅니다.</figcaption></figure></div>', '<div class="shots2"><figure class="shot"><img src="img/home_b.png" alt="현황판 화면" loading="lazy"><figcaption>현황판 · 사람이 정할 일만 띄웁니다.</figcaption></figure><figure class="shot"><img src="img/funnel_b.png" alt="퍼널 검산 화면" loading="lazy"><figcaption>숫자가 맞지 않으면 앱이 판단을 멈춥니다.</figcaption></figure></div>'];
+const MS=['<div class="shots2"><figure class="shot"><img src="img/keywords.jpg" alt="키워드 화면" loading="lazy"><figcaption>키워드 · 검색량과 경쟁도로 우선순위를 매깁니다.</figcaption></figure><figure class="shot"><img src="img/library_b.png" alt="보관함 화면" loading="lazy"><figcaption>보관함 · 광고비 잔액 경보와 경쟁 순위가 매일 쌓입니다.</figcaption></figure></div>', '<div class="shots1"><figure class="shot"><img src="img/review.png" alt="검수함 화면" loading="lazy"><figcaption>검수함 · 카피마다 소구 이유가 붙고, 제가 승인·반려합니다.</figcaption></figure></div>', '<div class="shots2"><figure class="shot"><img src="shots/s3.jpg" alt="퍼널 화면" loading="lazy"><figcaption>퍼널 · 단계마다 몇 명이 빠지는지 매일 셉니다.</figcaption></figure><figure class="shot"><img src="img/rev_b.png" alt="매출 대시보드 화면" loading="lazy"><figcaption>매출 대시보드 · 광고 리드가 수술까지 얼마나 남는지 봅니다.</figcaption></figure></div>', '<div class="shots2"><figure class="shot"><img src="img/home_b.png" alt="현황판 화면" loading="lazy"><figcaption>현황판 · 사람이 정할 일만 띄웁니다.</figcaption></figure><figure class="shot"><img src="img/funnel_b.png" alt="퍼널 검산 화면" loading="lazy"><figcaption>숫자가 맞지 않으면 앱이 판단을 멈춥니다.</figcaption></figure></div>'];
 const CN=['노출','검증','전환','측정'];
 const chEl=document.getElementById('chapters'),orbit=document.getElementById('orbit');
 CH.forEach((c,i)=>{
